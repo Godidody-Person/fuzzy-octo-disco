@@ -1,0 +1,738 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); /* cite: 1 */
+
+:root {
+    --font-main: 'Figtree', sans-serif; /* cite: 1 */
+    --font-secondary: 'Inter', sans-serif; /* cite: 1 */
+    --p-color: rgb(26, 20, 69); /* cite: 1 */
+    --primary: rgb(106, 27, 163); /* cite: 1 */
+    --primary-dark: rgb(61, 2, 94); /* cite: 2 */
+    --primary-light: rgb(172, 92, 217); /* cite: 2 */
+}
+
+body {
+    font-family: var(--font-main); /* cite: 2 */
+    margin: 0; /* cite: 2 */
+}
+
+h1, h2, h3, h4, h5, h6, p, li {
+    margin: 0; /* cite: 3 */
+}
+
+h1[gradient] {
+    background: linear-gradient(to right, var(--primary-light), var(--primary-dark)); /* cite: 4 */
+    background-clip: text; /* cite: 4 */
+    -webkit-background-clip: text; /* cite: 4 */
+    -webkit-text-fill-color: transparent; /* cite: 4 */
+    -moz-background-clip: text; /* cite: 4 */
+    -moz-text-fill-color: transparent; /* cite: 4 */
+}
+
+h1.big {
+    font-size: 4em; /* cite: 5 */
+}
+
+h1.header {
+    font-size: 80px; /* cite: 5 */
+    font-weight: 700; /* cite: 5 */
+    color: var(--p-color); /* cite: 5 */
+    text-align: left; /* cite: 5 */
+    left: 100px; /* cite: 5 */
+    width: fit-content; /* cite: 5 */
+    position: relative; /* cite: 5 */
+}
+
+h1.change-text.header {
+    left: 170px; /* cite: 6 */
+    font-weight: 500; /* cite: 6 */
+}
+
+h1.change-text.header span {
+    animation: change-text-left 3s infinite; /* cite: 6 */
+    position: absolute; /* cite: 7 */
+    text-align: left; /* cite: 7 */
+    top: 90px; /* cite: 7 */
+    left: 0; /* cite: 7 */
+    text-wrap-mode: nowrap; /* cite: 7 */
+    font-weight: 700; /* cite: 7 */
+    z-index: 2; /* cite: 7 */
+    color: var(--p-color); /* cite: 7 */
+}
+
+h1.change-text.header span:nth-of-type(1) {
+    animation-delay: 0s; /* cite: 8 */
+}
+
+h1.change-text.header span:nth-of-type(2) {
+    animation-delay: -1.5s; /* cite: 9 */
+}
+
+h1.change-text.header span:nth-of-type(3) {
+    animation: none; /* cite: 10 */
+    visibility: visible; /* cite: 10 */
+    color: transparent; /* cite: 10 */
+    z-index: 0; /* cite: 10 */
+}
+
+/* h1.change-text.header span:nth-of-type(3)::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: -5px -6px 14px rgba(255, 255, 255, 0.1) inset, 5px 6px 14px rgba(0, 0, 0, 0.1) inset;
+    backdrop-filter: blur(12px);
+} */
+
+@keyframes change-text {
+    95%, 100% {
+        transform: translate(calc(-50% + var(--offset)), var(--offsetY)) scaleY(0.1) skewX(10deg); /* cite: 13 */
+        opacity: 0; /* cite: 14 */
+    }
+    50% {
+        transform: translate(calc(-50% + var(--offset)), 0px) scaleY(1); /* cite: 14 */
+        opacity: 1; /* cite: 15 */
+    }
+    0%, 5% {
+        transform: translate(calc(-50% + var(--offset)), calc(0px - var(--offsetY))) scaleY(0.1) skewX(-10deg); /* cite: 15 */
+        opacity: 0; /* cite: 16 */
+    }
+}
+
+@keyframes change-text-left {
+    95%, 100% {
+        -webkit-transform: translateY(40px) scaleY(0); /* cite: 16 */
+        transform: translateY(40px) scaleY(0); /* cite: 17 */
+        opacity: 0; /* cite: 17 */
+    }
+    50% {
+        -webkit-transform: translateY(0px) scaleY(1); /* cite: 17 */
+        transform: translateY(0px) scaleY(1); /* cite: 18 */
+        opacity: 1; /* cite: 18 */
+    }
+    0%, 5% {
+        -webkit-transform: translateY(-40px) scaleY(0); /* cite: 18 */
+        transform: translateY(-40px) scaleY(0); /* cite: 18 */
+        opacity: 0; /* cite: 18 */
+    }
+}
+
+video {
+    max-width: 100%; /* cite: 19 */
+}
+
+li {
+    list-style: none; /* cite: 19 */
+    text-align: center; /* cite: 19 */
+    background-color: rgba(0, 0, 0, 0.047); /* cite: 19 */
+    margin: 5px; /* cite: 19 */
+    padding: 5px; /* cite: 19 */
+    -webkit-border-radius: 3px; /* cite: 20 */
+    border-radius: 3px; /* cite: 20 */
+}
+
+details {
+    font-size: 20px; /* cite: 20 */
+    width: 100%; /* cite: 20 */
+    border-top: 3px solid rgba(0, 0, 0, 0.1); /* cite: 21 */
+    border-bottom: 3px solid rgba(0, 0, 0, 0.1); /* cite: 21 */
+    transition: .1s linear; /* cite: 21 */
+}
+
+details p {
+    color: rgba(0, 0, 0, 0.571) !important; /* cite: 22 */
+}
+
+summary {
+    width: fit-content; /* cite: 22 */
+    background: none; /* cite: 22 */
+    transition: .1s linear; /* cite: 22 */
+    padding: 10px; /* cite: 22 */
+}
+
+summary:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* cite: 23 */
+    -webkit-transition: .1s linear; /* cite: 23 */
+    -webkit-transition: .1s linear; /* cite: 23 */
+    -webkit-transition: .1s linear; /* cite: 23 */
+    transition: .1s linear; /* cite: 23 */
+}
+
+details:hover {
+    opacity: 1; /* cite: 24 */
+    color: var(--p-color); /* cite: 24 */
+}
+
+.section-plain {
+    margin: 5vw; /* cite: 24 */
+    padding-top: 9vw; /* cite: 25 */
+    display: flex; /* cite: 25 */
+    justify-content: center; /* cite: 25 */
+    flex-wrap: wrap; /* cite: 25 */
+}
+
+.section-plain h1 {
+    font-size: calc(calc(2vw + 10px) * 1.4); /* cite: 26 */
+}
+
+.section-plain * {
+    text-align: center; /* cite: 27 */
+    width: 100%; /* cite: 27 */
+}
+
+.section-plain ul {
+    padding-left: 0; /* cite: 27 */
+}
+
+.section {
+    height: fit-content; /* cite: 28 */
+    min-height: max(100vh, 869px); /* cite: 28 */
+    position: relative; /* cite: 28 */
+}
+
+.section.header.small {
+    grid-template-columns: 1fr 1fr; /* cite: 29 */
+    justify-items: center; /* cite: 29 */
+    justify-content: center; /* cite: 29 */
+}
+
+.section.header {
+    display: grid; /* cite: 30 */
+    grid-template-columns: 3fr 5fr; /* cite: 30 */
+    justify-content: center; /* cite: 30 */
+    background-color: #e0b0ff; /* cite: 30 */
+    background-image: radial-gradient(at 22% 49%, hsla(270, 69%, 70%, 1) 0px, transparent 50%), radial-gradient(at 38% 36%, hsla(279, 75%, 76%, 1) 0px, transparent 50%), radial-gradient(at 2% 78%, hsla(251, 77%, 67%, 1) 0px, transparent 50%), radial-gradient(at 23% 55%, hsla(227, 87%, 63%, 1) 0px, transparent 50%), radial-gradient(at 78% 10%, rgb(126, 168, 236) 0px, transparent 50%), radial-gradient(at 30% 82%, hsla(349, 85%, 66%, 1) 0px, transparent 50%), radial-gradient(at 93% 27%, hsla(211, 73%, 76%, 1) 0px, transparent 50%); /* cite: 31 */
+    z-index: 0; /* cite: 31 */
+}
+
+.section.header div {
+    display: flex; /* cite: 31 */
+    flex-direction: column; /* cite: 32 */
+    flex-wrap: wrap; /* cite: 32 */
+    justify-content: center; /* cite: 32 */
+    align-content: left; /* cite: 32 */
+    margin-inline: 50px; /* cite: 32 */
+}
+
+.section.header > div:nth-of-type(1) > h1:not(.change-text) + div {
+    left: 100px; /* cite: 33 */
+}
+
+.section.header > div:nth-of-type(1) > a {
+    position: relative; /* cite: 33 */
+    left: 100px; /* cite: 34 */
+    margin-block: 12px; /* cite: 34 */
+    width: fit-content; /* cite: 34 */
+}
+
+.section.header > div:nth-of-type(1) > div {
+    position: relative; /* cite: 35 */
+    display: flex; /* cite: 35 */
+    left: 170px; /* cite: 35 */
+    flex-direction: row; /* cite: 36 */
+    justify-content: left; /* cite: 36 */
+    gap: 10px; /* cite: 36 */
+    flex-wrap: nowrap; /* cite: 36 */
+    margin: 0; /* cite: 36 */
+}
+
+.section.header > div:nth-of-type(1) > div a {
+    left: 0; /* cite: 37 */
+}
+
+.section.header > div:nth-of-type(1) > div p {
+    top: 20px; /* cite: 38 */
+}
+
+.section.header > div:nth-of-type(1) p {
+    text-align: left; /* cite: 39 */
+    position: relative; /* cite: 39 */
+    max-width: 100%; /* cite: 39 */
+    font-size: 20px; /* cite: 39 */
+    color: rgba(0, 0, 0, 0.498); /* cite: 40 */
+    line-height: 1.3em; /* cite: 40 */
+    margin-block: 12px; /* cite: 40 */
+}
+
+.section.header div:not(.no-zebra-striping) div p:nth-of-type(odd) {
+    background: rgba(0, 0, 0, 0.05); /* cite: 41 */
+}
+
+.section.header > div:nth-of-type(2) {
+    display: flex; /* cite: 42 */
+    flex-direction: row; /* cite: 42 */
+    flex-wrap: wrap; /* cite: 42 */
+    justify-content: center; /* cite: 42 */
+    align-items: center; /* cite: 42 */
+    align-content: center; /* cite: 42 */
+    gap: 30px; /* cite: 43 */
+    z-index: 3; /* cite: 43 */
+}
+
+.section.header > div:nth-of-type(2) div {
+    width: fit-content; /* cite: 43 */
+    padding: 20px; /* cite: 44 */
+    -webkit-border-radius: 10px; /* cite: 44 */
+    border-radius: 10px; /* cite: 44 */
+    -webkit-box-shadow: 8px 10px 30px 4px rgba(0, 0, 0, 0.2); /* cite: 44 */
+    box-shadow: 8px 10px 30px 4px rgba(0, 0, 0, 0.2); /* cite: 45 */
+    background: rgb(255, 255, 255); /* cite: 45 */
+    -webkit-backdrop-filter: blur(12px); /* cite: 45 */
+    backdrop-filter: blur(12px); /* cite: 45 */
+    color: var(--p-color); /* cite: 46 */
+    text-align: center; /* cite: 46 */
+    z-index: 8; /* cite: 46 */
+}
+
+.section.header > div:nth-of-type(2) div p {
+    border-radius: 15px; /* cite: 46 */
+    padding: 4px; /* cite: 47 */
+}
+
+.section.header > div:nth-of-type(2) div a#rainbow {
+    background: linear-gradient(to right, rgb(237, 219, 255), rgb(255, 197, 244)); /* cite: 47 */
+    color: rgba(0, 0, 0, 0.7) !important; /* cite: 47 */
+    font-weight: bold; /* cite: 47 */
+}
+
+.section.header > div:nth-of-type(2) div a#rainbow:hover {
+    -webkit-filter: brightness(0.9) saturate(2); /* cite: 48 */
+    filter: brightness(0.9) saturate(2); /* cite: 48 */
+    transition: .1s linear; /* cite: 48 */
+}
+
+lb {
+    width: 100%; /* cite: 49 */
+    height: 0; /* cite: 49 */
+}
+
+.section.header::after {
+    content: ""; /* cite: 50 */
+    position: absolute; /* cite: 50 */
+    top: 0; /* cite: 50 */
+    left: 0; /* cite: 50 */
+    width: 100%; /* cite: 50 */
+    height: 100%; /* cite: 50 */
+    background: radial-gradient(circle at 30% 50%, white 20%, transparent); /* cite: 50 */
+    background-size: cover; /* cite: 50 */
+    z-index: -3; /* cite: 50 */
+}
+
+.background {
+    position: absolute; /* cite: 50 */
+    width: 100%; /* cite: 51 */
+    height: 100vh; /* cite: 51 */
+}
+
+.background img {
+    position: absolute; /* cite: 51 */
+    z-index: -1; /* cite: 51 */
+    width: 15%; /* cite: 51 */
+}
+
+.navbar {
+    z-index: 999; /* cite: 52 */
+    position: fixed; /* cite: 52 */
+    height: fit-content; /* cite: 52 */
+    width: 100vw; /* cite: 52 */
+    margin: 10px; /* cite: 52 */
+    display: flex; /* cite: 52 */
+    justify-content: center; /* cite: 52 */
+    align-items: center; /* cite: 52 */
+    align-content: center; /* cite: 52 */
+    padding: 20px; /* cite: 52 */
+    -webkit-backdrop-filter: blur(10px); /* cite: 53 */
+    backdrop-filter: blur(10px); /* cite: 53 */
+}
+
+.navbar a:nth-of-type(1) {
+    font-weight: 750; /* cite: 53 */
+    margin-left: 0; /* cite: 53 */
+    margin-right: auto; /* cite: 53 */
+    color: var(--p-color); /* cite: 53 */
+}
+
+.navbar a:nth-of-type(1) span {
+    color: rgba(36, 59, 42, 0.286); /* cite: 54 */
+    font-weight: 400; /* cite: 54 */
+}
+
+.navbar a {
+    color: var(--p-color); /* cite: 55 */
+    font-size: 25px; /* cite: 55 */
+    font-weight: 600; /* cite: 55 */
+    text-decoration: none; /* cite: 55 */
+    text-align: center; /* cite: 55 */
+    padding-inline: 15px; /* cite: 56 */
+    margin-inline: 30px; /* cite: 56 */
+    -webkit-transition: .1s linear; /* cite: 56 */
+    transition: .1s linear; /* cite: 56 */
+}
+
+.navbar a:nth-last-child(2) {
+    margin-right: 0; /* cite: 57 */
+    margin-left: auto; /* cite: 57 */
+}
+
+.navbar a:last-child {
+    margin-right: 60px; /* cite: 58 */
+    margin-left: 10px; /* cite: 58 */
+}
+
+.navbar a:not(:nth-last-child(2)):not(:last-child):hover {
+    opacity: 0.5; /* cite: 59 */
+    transition: .1s linear; /* cite: 59 */
+}
+
+.small-navbar {
+    display: none; /* cite: 59 */
+}
+
+.button,
+button {
+    margin: 0; /* cite: 59 */
+    padding: 10px; /* cite: 60 */
+    padding-inline: 15px; /* cite: 60 */
+    -webkit-border-radius: 999px; /* cite: 60 */
+    border-radius: 999px; /* cite: 60 */
+    border: none; /* cite: 60 */
+    background: var(--p-color); /* cite: 60 */
+    color: rgb(255, 255, 255) !important; /* cite: 60 */
+    font-weight: 500; /* cite: 61 */
+    font-size: 17px !important; /* cite: 61 */
+    margin-block: 5px; /* cite: 61 */
+    transition: .1s linear; /* cite: 61 */
+}
+
+.button:hover,
+button:hover {
+    background-color: rgb(54, 127, 173); /* cite: 61 */
+    transition: .1s background-color linear; /* cite: 61 */
+}
+
+a {
+    text-decoration: none; /* cite: 62 */
+    color: var(--primary-dark); /* cite: 62 */
+}
+
+a:not[class]:hover {
+    text-decoration: underline; /* cite: 62 */
+}
+
+i[icon-align] {
+    font-size: inherit; /* cite: 62 */
+    vertical-align: text-top; /* cite: 63 */
+    transform: translateY(2px); /* cite: 63 */
+}
+
+.about {
+    display: flex; /* cite: 63 */
+    flex-wrap: wrap; /* cite: 63 */
+    gap: 0.1vw; /* cite: 63 */
+    justify-content: center; /* cite: 63 */
+    align-items: flex-start !important; /* cite: 63 */
+}
+
+.about > div {
+    position: static; /* cite: 64 */
+}
+
+.about > div details div {
+    position: sticky; /* cite: 64 */
+    left: 0; /* cite: 64 */
+    right: 0; /* cite: 64 */
+    font-size: 1em; /* cite: 64 */
+    width: auto !important; /* cite: 64 */
+    margin: 0 !important; /* cite: 65 */
+}
+
+.about-image {
+    height: 200px; /* cite: 65 */
+    width: 200px; /* cite: 65 */
+    object-fit: contain; /* cite: 65 */
+    border-radius: 999px; /* cite: 65 */
+    position: relative; /* cite: 65 */
+    left: 50%; /* cite: 65 */
+    transform: translateX(-50%); /* cite: 65 */
+    filter: contrast(0.9); /* cite: 65 */
+}
+
+.about-image#img1 {
+    object-fit: cover; /* cite: 66 */
+}
+
+.panel-about > h1 {
+    font-size: 20px; /* cite: 66 */
+}
+
+.panel-about > h2 {
+    font-size: 16px; /* cite: 66 */
+    color: var(--primary); /* cite: 67 */
+}
+
+.panel-about > h2,
+.panel-about > details {
+    margin-block: 8px; /* cite: 67 */
+}
+
+.panel-about > details {
+    scale: 0.8; /* cite: 67 */
+}
+
+.grid {
+    display: grid !important; /* cite: 68 */
+    grid-template-columns: repeat(3, 1fr) !important; /* cite: 68 */
+    gap: 10px !important; /* cite: 68 */
+    justify-content: center; /* cite: 68 */
+    margin-block: 10px; /* cite: 69 */
+    -webkit-box-shadow: none !important; /* cite: 69 */
+    box-shadow: none !important; /* cite: 69 */
+    padding: 0 !important; /* cite: 69 */
+}
+
+.grid a {
+    background-color: rgb(218, 205, 255); /* cite: 69 */
+    border-radius: 10px; /* cite: 70 */
+    padding: 20px; /* cite: 70 */
+    text-align: center; /* cite: 70 */
+    font-weight: 550; /* cite: 70 */
+    -webkit-transition: .1s linear box-shadow, .1s ease-out filter; /* cite: 70 */
+    transition: .1s linear box-shadow, .1s ease-out filter; /* cite: 72 */
+}
+
+.grid a:hover {
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1); /* cite: 73 */
+    filter: brightness(0.9) saturate(3); /* cite: 73 */
+    transition: .1s linear box-shadow, .1s ease-out filter; /* cite: 74 */
+}
+
+.symbol {
+    font-size: 100px; /* cite: 74 */
+    margin: 20px; /* cite: 75 */
+    padding-top: 10px; /* cite: 75 */
+    border-radius: 10px; /* cite: 75 */
+    background-color: rgba(200, 73, 255, 0.326); /* cite: 75 */
+}
+
+.symbol i {
+    color: var(--primary-light); /* cite: 76 */
+    font-weight: 100; /* cite: 76 */
+}
+
+.transition {
+    position: relative; /* cite: 77 */
+    width: 100%; /* cite: 77 */
+    height: 1px; /* cite: 77 */
+    background: rgba(0, 0, 0, 0.305); /* cite: 77 */
+}
+
+.section.header.no-gradient {
+    background: none !important; /* cite: 78 */
+}
+
+@media(max-width:1600px) {
+    h1.header {
+        font-size: 60px; /* cite: 79 */
+    }
+    h1.header.change-text {
+        left: 80px; /* cite: 80 */
+    }
+    .section.header h1:not(.change-text) {
+        left: 80px; /* cite: 81 */
+    }
+    .section.header div {
+        left: 80px !important; /* cite: 82 */
+    }
+    .section.header div p {
+        left: 0 !important; /* cite: 83 */
+    }
+}
+
+@media(max-width:1240px) {
+    h1.header {
+        font-size: 60px; /* cite: 84 */
+        left: 0; /* cite: 84 */
+        text-align: center; /* cite: 84 */
+    }
+    .section.header.small {
+        grid-template-columns: 1fr !important; /* cite: 85 */
+    }
+    .section.header {
+        grid-template-columns: 1fr; /* cite: 86 */
+        padding-top: 200px; /* cite: 86 */
+    }
+    .section.header h1:not(.change-text) {
+        left: 0; /* cite: 87 */
+    }
+    .section.header div {
+        align-content: center; /* cite: 88 */
+        align-items: center; /* cite: 88 */
+        justify-content: center !important; /* cite: 88 */
+        left: 0 !important; /* cite: 88 */
+    }
+    .section.header div p {
+        text-align: center !important; /* cite: 89 */
+        width: 70%; /* cite: 89 */
+        left: 0 !important; /* cite: 89 */
+    }
+    .section.header div a {
+        left: 0 !important; /* cite: 90 */
+    }
+    .section.header div:nth-of-type(1) {
+        margin-bottom: 40px; /* cite: 91 */
+    }
+    .section.header:not([landing-page]) {
+        align-content: center; /* cite: 92 */
+        padding-top: 100px; /* cite: 92 */
+    }
+    h1.change-text.header {
+        left: 0; /* cite: 93 */
+    }
+    h1.change-text.header span {
+        --offset: 20px; /* cite: 93 */
+        --offsetY: 30px; /* cite: 94 */
+        animation: change-text 3s infinite ease; /* cite: 94 */
+        top: 66px; /* cite: 94 */
+        left: 50%; /* cite: 94 */
+        padding-right: 20px; /* cite: 94 */
+        transform: translateX(calc(-50% + 10px)); /* cite: 94 */
+    }
+    h1 {
+        font-size: 30px; /* cite: 95 */
+    }
+    h2 {
+        font-size: 20px; /* cite: 96 */
+    }
+    p {
+        font-size: 14px; /* cite: 97 */
+    }
+    .about-image {
+        left: 0; /* cite: 98 */
+        transform: none; /* cite: 98 */
+    }
+}
+
+@media(max-width:923px) {
+    .navbar {
+        display: none; /* cite: 99 */
+    }
+    .small-navbar {
+        display: block; /* cite: 99 */
+        position: fixed; /* cite: 99 */
+        z-index: 3; /* cite: 99 */
+        margin: 0px; /* cite: 100 */
+        padding: 10px; /* cite: 100 */
+        border-radius: 20px; /* cite: 100 */
+        backdrop-filter: blur(30px); /* cite: 100 */
+    }
+    .small-navbar .menu {
+        display: none; /* cite: 101 */
+        flex-direction: column; /* cite: 101 */
+        gap: 5px; /* cite: 101 */
+        background: white; /* cite: 101 */
+        width: fit-content; /* cite: 101 */
+        position: absolute; /* cite: 102 */
+        left: 0; /* cite: 102 */
+        top: 50px; /* cite: 102 */
+        border-top-right-radius: 10px; /* cite: 102 */
+        border-bottom-right-radius: 10px; /* cite: 102 */
+        margin: 0; /* cite: 102 */
+        padding: 20px; /* cite: 102 */
+    }
+    .small-navbar .menu a {
+        color: var(--p-color); /* cite: 103 */
+    }
+    .grid {
+        grid-template-columns: repeat(2, 1fr) !important; /* cite: 104 */
+    }
+}
+
+@media(max-width:660px) {
+    .grid {
+        grid-template-columns: 1fr !important; /* cite: 105 */
+    }
+    .grid a {
+        font-size: 12px !important; /* cite: 106 */
+    }
+}
+
+@media(max-width:550px) {
+    h1.header {
+        font-size: 34px; /* cite: 107 */
+        text-align: center; /* cite: 107 */
+        left: 0; /* cite: 107 */
+    }
+    h1.change-text.header span {
+        --offset: 10px; /* cite: 108 */
+        --offsetY: 20px; /* cite: 108 */
+        top: 40px; /* cite: 108 */
+        left: 50%; /* cite: 109 */
+        transform: translateX(calc(-50% + 10px)); /* cite: 109 */
+    }
+    .section.header:not([landing-page]) div:nth-child(1) div p {
+        margin-top: 0 !important; /* cite: 109 */
+    }
+    h1 {
+        font-size: 24px; /* cite: 110 */
+    }
+    h2 {
+        font-size: 14px; /* cite: 111 */
+    }
+    p {
+        font-size: 9px; /* cite: 112 */
+    }
+    br {
+        display: none; /* cite: 113 */
+    }
+    .section.header {
+        grid-template-columns: 1fr; /* cite: 114 */
+    }
+    .section.header div:nth-child(1) {
+        margin-bottom: 70px; /* cite: 115 */
+    }
+    .section.header div:nth-child(1) div p {
+        font-size: 12px; /* cite: 116 */
+        margin-top: 30px; /* cite: 116 */
+    }
+    .section.header div:nth-child(2) {
+        gap: 10px; /* cite: 117 */
+        max-width: calc(100vw - 40px); /* cite: 117 */
+    }
+    .section.header div:nth-child(2):not(#d1) {
+        padding: 0 !important; /* cite: 118 */
+    }
+    .button,
+    button {
+        font-size: 10px !important; /* cite: 119 */
+    }
+    .about {
+        width: 100vw !important; /* cite: 120 */
+    }
+}
+
+@media(max-width:300px) {
+    h1.header {
+        font-size: 20px; /* cite: 121 */
+        left: 0; /* cite: 121 */
+    }
+    h1.change-text.header span {
+        --offset: 10px; /* cite: 122 */
+        --offsetY: 10px; /* cite: 122 */
+        top: 20px; /* cite: 122 */
+        left: 50%; /* cite: 122 */
+        transform: translateX(calc(-50% + 10px)); /* cite: 122 */
+    }
+    h1 {
+        font-size: 17px; /* cite: 123 */
+    }
+    h2 {
+        font-size: 10px; /* cite: 124 */
+    }
+    p {
+        font-size: 6px; /* cite: 125 */
+    }
+    .section.header div:nth-child(1) div p {
+        font-size: 8px; /* cite: 126 */
+        margin-top: 20px; /* cite: 126 */
+    }
+}
